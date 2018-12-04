@@ -75,6 +75,10 @@ class Swift_Mailer
             }
         }
 
+        if ($this->transport->isStarted()) {
+            $this->transport->stop();
+        }
+
         return $sent;
     }
 
